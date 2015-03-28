@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Name="NDesk.Options" Path="NDesk.Options" Type="Library">
+  <Properties>
+    <CustomDefinitions>
+      <Platform Name="Android">TRACE;LINQ</Platform>
+      <Platform Name="iOS">TRACE;LINQ</Platform>
+      <Platform Name="Linux">TRACE;LINQ</Platform>
+      <Platform Name="MacOS">TRACE;LINQ</Platform>
+      <Platform Name="Ouya">TRACE;LINQ</Platform>
+      <Platform Name="PSMobile">TRACE;LINQ</Platform>
+      <Platform Name="Windows">TRACE;LINQ</Platform>
+      <Platform Name="Windows8">TRACE;LINQ</Platform>
+      <Platform Name="WindowsGL">TRACE;LINQ</Platform>
+      <Platform Name="WindowsPhone">TRACE;LINQ</Platform>
+    </CustomDefinitions>
+  </Properties>
+  <References>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </References>
+  <Files>
+    <Compile Include="Options.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </Files>
+</Project>
