@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Name="NDesk.Options" Path="NDesk.Options" Type="Library">
   <Properties>
-    <Property Name="NoWarn" Value="CS1591" />
+    <Property Name="NoWarn" Value="CS1591,CS0618" />
     <CustomDefinitions>
       <Platform Name="Android">TRACE;LINQ;NDESK_OPTIONS</Platform>
       <Platform Name="iOS">TRACE;LINQ;NDESK_OPTIONS</Platform>
