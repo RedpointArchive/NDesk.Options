@@ -1,6 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Module>
-  <Name>NDesk.Options</Name>
+  <Name>NDesk.Options.Redpoint</Name>
+  <Authors>Redpoint Games</Authors>
+  <SemanticVersion>0.2.1</SemanticVersion>
+  <Description>A port of NDesk.Options with support for additional platforms.</Description>
+  <LicenseUrl>https://opensource.org/licenses/MIT</LicenseUrl>
+  <GitRepositoryUrl>https://github.com/RedpointGames/NDesk.Options</GitRepositoryUrl>
   <DefaultAction>resync</DefaultAction>
+  <DisableSynchronisation>false</DisableSynchronisation>
   <GenerateNuGetRepositories>true</GenerateNuGetRepositories>
 </Module>

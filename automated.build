@@ -1,10 +1,10 @@
 #version 1
 
 if host Windows
-  set target-platforms Windows
+  set target-platforms Windows,Unity
 endif
 if host MacOS
-  set target-platforms MacOS,iOS,Android
+  set target-platforms MacOS,Android,iOS
 endif
 if host Linux
   set target-platforms Linux
@@ -13,19 +13,22 @@ endif
 generate
 build
 
-pack . $TARGET_PLATFORM.tar.lzma $TARGET_PLATFORM
+set package-format nuget/zip
+
+pack . NDesk.Options.Redpoint.$TARGET_PLATFORM.nupkg $TARGET_PLATFORM
+
 if host Windows
-  if file-exists C:\Users\build\Documents\protobuild_api_key.txt
-    push C:\Users\build\Documents\protobuild_api_key.txt $TARGET_PLATFORM.tar.lzma http://protobuild.org/hach-que/NDesk.Options $GIT_COMMIT $TARGET_PLATFORM master --ignore-on-existing
+  if file-exists C:\Users\build\Documents\nuget_api_key.txt
+    push C:\Users\build\Documents\nuget_api_key.txt NDesk.Options.Redpoint.$TARGET_PLATFORM.nupkg https://www.nuget.org/api/v2/package --ignore-on-existing
   endif
 endif
 if host MacOS
-  if file-exists /Users/june/protobuild_api_key.txt
-    push /Users/june/protobuild_api_key.txt $TARGET_PLATFORM.tar.lzma http://protobuild.org/hach-que/NDesk.Options $GIT_COMMIT $TARGET_PLATFORM master --ignore-on-existing
+  if file-exists /Users/june/nuget_api_key.txt
+    push /Users/june/nuget_api_key.txt NDesk.Options.Redpoint.$TARGET_PLATFORM.nupkg https://www.nuget.org/api/v2/package --ignore-on-existing
   endif
 endif
 if host Linux
-  if file-exists /srv/api_key.txt
-    push /srv/api_key.txt $TARGET_PLATFORM.tar.lzma http://protobuild.org/hach-que/NDesk.Options $GIT_COMMIT $TARGET_PLATFORM master --ignore-on-existing
+  if file-exists /srv/nuget_api_key.txt
+    push /srv/nuget_api_key.txt NDesk.Options.Redpoint.$TARGET_PLATFORM.nupkg https://www.nuget.org/api/v2/package --ignore-on-existing
   endif
 endif
